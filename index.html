@@ -1,27 +1,119 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-<script>
-function allowDrop(ev) {
-  ev.preventDefault();
-}
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-gap: 50px;
+            grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
+            grid-template-rows: 20vw 20vw 20vw 20vw 20vw;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .slot.active {
+            border: 1px solid lightgrey;
+        }
+        
+        .piece {
+            padding: 45%;
+            margin: 5%;
+        }
+        
+        .piece.right {
+            background-color: green;
+        }
+        
+        .piece.left {
+            background-color: red;
+        }
+    </style>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
 
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
 
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-}
-</script>
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
 </head>
+
 <body>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div id="slot1" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece1" draggable="true" ondragstart="drag(event)" class="piece right"></div>
+    </div>
+    <div id="slot2" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece2" draggable="true" ondragstart="drag(event)" class="piece right"></div>
+    </div>
+    <div id="slot3" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece3" draggable="true" ondragstart="drag(event)" class="piece right"></div>
+    </div>
+    <div class="slot"></div>
+    <div class="slot"></div>
 
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="slot4" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece4" draggable="true" ondragstart="drag(event)" class="piece right"></div>
+    </div>
+    <div id="slot5" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece5" draggable="true" ondragstart="drag(event)" class="piece right"></div>
+    </div>
+    <div id="slot6" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece6" draggable="true" ondragstart="drag(event)" class="piece right"></div>
+    </div>
+    <div id="slot7" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece7" draggable="true" ondragstart="drag(event)" class="piece right"></div>
+    </div>
+    <div id="slot8" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
 
-<img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
-
+    </div>
+    <div id="slot9" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece9" draggable="true" ondragstart="drag(event)" class="piece left"></div>
+    </div>
+    <div id="slot10" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece10" draggable="true" ondragstart="drag(event)" class="piece left"></div>
+    </div>
+    <div id="slot11" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece11" draggable="true" ondragstart="drag(event)" class="piece left"></div>
+    </div>
+    <div id="slot12" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece12" draggable="true" ondragstart="drag(event)" class="piece left"></div>
+    </div>
+    <div id="slot13" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece13" draggable="true" ondragstart="drag(event)" class="piece left"></div>
+    </div>
+    <div id="slot14" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece14" draggable="true" ondragstart="drag(event)" class="piece left"></div>
+    </div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div id="slot15" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece15" draggable="true" ondragstart="drag(event)" class="piece left"></div>
+    </div>
+    <div id="slot16" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece16" draggable="true" ondragstart="drag(event)" class="piece left"></div>
+    </div>
+    <div id="slot17" ondrop="drop(event)" ondragover="allowDrop(event)" class="slot active">
+        <div id="piece17" draggable="true" ondragstart="drag(event)" class="piece left"></div>
+    </div>
+    <div class="slot"></div>
+    <div class="slot"></div>
 </body>
+
 </html>
